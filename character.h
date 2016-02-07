@@ -8,13 +8,16 @@ using namespace std;
 class Character {
 	private:
 		int _HP, _HP_MAX;
-	    string _NICKNAME;
-    public:
-		Character(int hp = 10, int hp_max = 10, string = "Player");
+	    int _MANA, _MANA_MAX;
+        int _POWER, _POWER_MAX;
+        int _DEFENCE, _DEFENCE_MAX;
+        string _NICKNAME;
         
-        int hp();
-        int hp_max();
+    public:
+		Character(string = "Someone");
+        
         void hello();
+        void attack(Character* player);
 
 };
 
