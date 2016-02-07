@@ -1,9 +1,10 @@
-#ifndef CHARACTER_H
-#define CHARACTER_H
+#include <iostream>
+#include "character.h"
 
-class Character {
-	private:
-		int hp, hp_max;				
-};
+using namespace std;
 
-#endif
+int main(void){
+    Character* player = new Character(25, 25, "Mateusz");    
+    //cout << "Player.hp: " << player->hp() << endl;
+    player->hello();
+}
