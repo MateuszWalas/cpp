@@ -6,7 +6,7 @@
 using namespace std;
 
 class Character {
-	private:
+	protected:
         int _HP, _HP_MAX;
         int _MANA, _MANA_MAX;
         int _POWER, _POWER_MAX;
