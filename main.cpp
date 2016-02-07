@@ -4,14 +4,13 @@
 
 using namespace std;
 
-typedef void (Character::*method)();
-
-int main(void){
-    method hi = &Character::hello;
+int main(){
+    void (Character::*hi)() = &Character::hello;
+    //method hi = &Character::hello;
     Mage* player = new Mage;
     
     // both work.
-    (player->*hi)();
+    //(player->*hi)();
     player->hello();
     
     player->attack(player);
@@ -19,4 +18,5 @@ int main(void){
     player->attack(player);
     player->attack(player);
     player->attack(player);
+    return 0;
 }
