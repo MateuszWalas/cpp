@@ -6,8 +6,8 @@
 #include "effect.h"
 
 using namespace std;
-
 class Skill {
+    friend class Character;
     private:
         string _NAME;
         string _WORDS;
@@ -19,6 +19,8 @@ class Skill {
         Skill(string = "Skill_name", string = "Skill_words", int = 1, int = 0, int = 1, int = 1);
         void addEffect(Effect*);
         void showEffects();
+
+        string getName();
 };
 
 #endif

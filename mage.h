@@ -9,7 +9,6 @@ using namespace std;
 class Mage: public Character {
     public:
         Mage(string = "Mage");
-        void hello();
 };
 
 #endif

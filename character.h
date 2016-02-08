@@ -2,7 +2,8 @@
 #define CHARACTER_H
 
 #include <string>
-//#include "skill.h"
+#include <vector>
+#include "skill.h"
 
 using namespace std;
 
@@ -13,11 +14,12 @@ class Character {
         int _POWER, _POWER_MAX;
         int _DEFENCE, _DEFENCE_MAX;
         string _NICKNAME;
-        //Skill* _SKILLBOOK[];
+        vector<Skill*> _SKILLBOOK;
     public:
         Character(string = "Someone");
-        virtual void hello() = 0;
         void attack(Character*);
+        void learn(Skill*);
+        void useSkill(string, Character* = nullptr);
 };
 
 #endif

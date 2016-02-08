@@ -1,25 +1,20 @@
 #include <iostream>
-#include "mage.h"
+#include "effect.h"
 #include "skill.h"
+#include "mage.h"
 
 using namespace std;
 
 int main(void){
-    void (Character::*hi)() = &Character::hello;
     Mage* player = new Mage;
     
-    // both work.
-    //(player->*hi)();
-    player->hello();
-    
-    Effect* effect;
-    Skill* skill = new Skill("Magic Missile", "Kamehameha!", 1, 0, 1, 1);
-    
-    skill->addEffect(new Effect("Obrazenia"));
-    skill->showEffects();
-    player->attack(player);
-    player->attack(player);
-    player->attack(player);
-    player->attack(player);
-    player->attack(player);
+    Skill* skill = new Skill("Magic Missiles", "", 1, 0, 1, 1);
+    skill->addEffect(new Effect("Missile 1", 7, 15));
+    skill->addEffect(new Effect("Missile 2", 8, 15));
+    skill->addEffect(new Effect("Missile 3", 4, 15));
+    skill->addEffect(new Effect("Missile 4", 11, 15));
+    skill->addEffect(new Effect("Missile 5", 9, 15));
+
+    player->learn(skill);
+    player->useSkill("Magic Missiles", player);
 }

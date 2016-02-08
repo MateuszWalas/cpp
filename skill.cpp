@@ -24,3 +24,6 @@ void Skill::showEffects(){
         ++i;
     }
 };
+string Skill::getName(){
+    return this->_NAME;
+};
