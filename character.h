@@ -2,20 +2,22 @@
 #define CHARACTER_H
 
 #include <string>
+//#include "skill.h"
 
 using namespace std;
 
 class Character {
-	protected:
+    protected:
         int _HP, _HP_MAX;
         int _MANA, _MANA_MAX;
         int _POWER, _POWER_MAX;
         int _DEFENCE, _DEFENCE_MAX;
         string _NICKNAME;
+        //Skill* _SKILLBOOK[];
     public:
         Character(string = "Someone");
-        void hello();
-        void attack(Character* player);
+        virtual void hello() = 0;
+        void attack(Character*);
 };
 
 #endif
